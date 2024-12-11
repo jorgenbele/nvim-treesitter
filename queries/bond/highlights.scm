@@ -1,16 +1,18 @@
 [
- "struct"
- "enum"
- "using"
- "view_of"
+  "struct"
+  "enum"
+  "using"
+  "view_of"
 ] @keyword
 
-[ "namespace" ] @keyword.namespace
+"namespace" @keyword.namespace
 
-[ "import" ] @keyword.import
+"import" @keyword.import
 
 [
-  (struct . (identifier))
+  (struct
+    .
+    (identifier))
   (generic_type)
   (user_defined_type)
 ] @type
@@ -20,17 +22,17 @@
   (container_type)
 ] @type.builtin
 
-[ (nothing) ] @constant.builtin
+(nothing) @constant.builtin
 
-[ (default_value) ] @constant
+(default_value) @constant
 
-[ (attribute) ] @attribute
+(attribute) @attribute
 
-[ (struct_field_required_variant) ] @keyword
+(struct_field_required_variant) @keyword
 
 [
- (builtin_type)
- (primitive_type)
+  (builtin_type)
+  (primitive_type)
 ] @type.builtin
 
 [
@@ -50,18 +52,45 @@
 ] @punctuation.delimiter
 
 (integer) @number
-[(string)] @string
 
-[(namespace . (full_ident))] @module
-[(import . (string))] @string.special.path
-[(struct . (identifier))] @type.definition
-[(using . (user_defined_type))] @type.definition
-[(struct_view . (identifier))] @type.definition
-[(enum . (identifier))] @type.definition
+(string) @string
 
-[(struct_field . (field_name)) ] @variable.member
-[(enum_field . (identifier)) ] @variable.member
-[(struct_view_body . (identifier)) ] @variable.member
+(namespace
+  .
+  (full_ident)) @module
 
-[(comment)] @comment
-[(comment)] @spell
+(import
+  .
+  (string)) @string.special.path
+
+(struct
+  .
+  (identifier)) @type.definition
+
+(using
+  .
+  (user_defined_type)) @type.definition
+
+(struct_view
+  .
+  (identifier)) @type.definition
+
+(enum
+  .
+  (identifier)) @type.definition
+
+(struct_field
+  .
+  (field_name)) @variable.member
+
+(enum_field
+  .
+  (identifier)) @variable.member
+
+(struct_view_body
+  .
+  (identifier)) @variable.member
+
+(comment) @comment
+
+(comment) @spell
