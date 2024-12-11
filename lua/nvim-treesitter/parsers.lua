@@ -200,6 +200,14 @@ list.blueprint = {
   experimental = true,
 }
 
+list.bond = {
+  install_info = {
+    url = "https://github.com/jorgenbele/tree-sitter-bond",
+    files = { "src/parser.c" },
+  },
+  maintainers = { "@jorgenbele" },
+}
+
 list.bp = {
   install_info = {
     url = "https://github.com/ambroisie/tree-sitter-bp",
